@@ -10,8 +10,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let provider = Provider::<Http>::try_from("https://sepolia.infura.io/v3/cd35b901304d47d0b4976e1fa2cb8bad")?;
     let provider = Arc::new(provider);
 
-    // 直接使用私钥（请使用你自己的私钥）
-    let private_key_hex = ""; // 这里填写你的私钥
+    
+    let private_key_hex = ""; // 这里填写私钥
     let wallet: LocalWallet = private_key_hex.parse()?;
     let wallet = wallet.with_chain_id(11155111u64); // Sepolia 网络的链 ID
 
